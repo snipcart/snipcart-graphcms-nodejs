@@ -33,6 +33,12 @@ app.use((req, res, next) => {
 app.set('view engine', 'pug')
 app.set('views', path.join(__dirname, '/app/views'))
 
-app.listen(3000, function() {
-    console.log('Listening on port 3000.');
-})
+if(process.env.NODE_ENV == 'production') {
+    app.listen(80, function() {
+        console.log('Listening on port 3000.');
+    })
+} else {
+    app.listen(3000, function() {
+        console.log('Listening on port 3000.');
+    })
+}
