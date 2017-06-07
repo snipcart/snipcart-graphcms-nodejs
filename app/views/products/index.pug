@@ -1,0 +1,33 @@
+extends ../layout.pug
+include ../_mixins/snipcart.pug
+
+block content
+    .section
+        .container
+            .heading
+                h1.title Our spinners
+
+    .section
+        .container
+            .columns.is-multiline
+                each p in products
+                    .column.is-half
+                        article.media
+                            figure.media-left
+                                p.image.is-64x64
+                                    img(src=p.image.url)
+                            .media-content
+                                .content
+                                    p
+                                        strong #{ p.name }
+                                        small  #{ formatMoney(p.price) }
+                                        br
+                                        | !{ p.description }
+                                nav.level
+                                    .level-left
+                                        +snipcart_button(p).level-item(title='Add to cart')
+                                            span.icon.is-small
+                                                i.fa.fa-cart-plus
+                                        a(href=`/products/${p.id}`, title='View details').level-item
+                                            span.icon.is-small
+                                                i.fa.fa-info

@@ -1,0 +1,9 @@
+mixin snipcart_button(product)
+    a(href='#').snipcart-add-item&attributes(attributes)(
+        data-item-name=product.name
+        data-item-id=product.sku
+        data-item-price=product.price
+        data-item-image=product.image.url
+        data-item-url=fullUrl(`/products/${product.id}/json`)
+    )
+        block

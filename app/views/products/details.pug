@@ -1,0 +1,21 @@
+extends ../layout.pug
+include ../_mixins/snipcart.pug
+
+block content
+    .section
+        .container
+            .columns
+                .card.column.is-half.is-offset-one-quarter
+                    .card-image
+                        figure.image.is-128x128
+                            img(src=product.image.url)
+                    .card-content
+                        p.title.is-4 #{ product.name }
+                            small  #{ formatMoney(product.price) }
+                        p #{ product.description }
+
+                    .card-content
+                        +snipcart_button(product)
+                            span.icon.is-large
+                                i.fa.fa-cart-plus
+                    

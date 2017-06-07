@@ -1,0 +1,24 @@
+{
+  "name": "graphcms-snip-nodejs",
+  "version": "1.0.0",
+  "description": "Sample of a NodeJS Express web app using GraphCMS as headless CMS and Snipcart to sell online.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./server.js 8000"
+  },
+  "author": "Charles Ouellet",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  },
+  "dependencies": {
+    "apollo-client": "^1.4.0",
+    "express": "^4.15.3",
+    "graphql-tag": "^2.2.1",
+    "node-fetch": "^1.7.1",
+    "numeral": "^2.0.6",
+    "pug": "^2.0.0-rc.2",
+    "url": "^0.11.0"
+  }
+}

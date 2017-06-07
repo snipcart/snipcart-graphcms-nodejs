@@ -1,0 +1,29 @@
+html
+    head
+        if title
+            title #{ title }
+        else
+            title Awesome shop powered by GraphCMS and Snipcart
+
+        block styles
+            link(href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.min.css', rel='stylesheet', type="text/css")
+            link(href="https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css", type="text/css", rel="stylesheet")
+            link(href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css', type='text/css', rel='stylesheet')
+
+        block scripts
+            script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js")
+            script(src="https://cdn.snipcart.com/scripts/2.0/snipcart.js", id="snipcart", data-api-key=snipcartApiKey)
+        
+    body
+        .container
+            nav.nav.has-shadow
+                .nav-left
+                    a(href='/').nav-item.is-active.is-tab Spinners
+
+                .nav-right.nav-menu
+                    a.nav-item.is-tab.snipcart-summary.snipcart-checkout
+                        i.fa.fa-shopping-cart &nbsp;
+                        | View cart (
+                        span.snipcart-total-items 0
+                        | )
+        block content
